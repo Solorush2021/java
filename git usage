@@ -1,0 +1,17 @@
+Git Commands
+git config
+Usage: git config –global user.name “[name]”
+Usage: git config –global user.email “[email address]”
+Description: Sets the author name and email address for commits.
+git init
+Usage: git init [repository name]
+Description: Starts a new repository.
+git add
+Usage: git add [file]
+Description: Adds a file to the staging area.
+git commit
+Usage: git commit -m “[Type in the commit message]”
+Description: Records or snapshots the file permanently in the version history.
+git status
+Usage: git status
+Description: Lists all the files that have to be committed.
