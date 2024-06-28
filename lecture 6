@@ -1,0 +1,26 @@
+Instantiation in Java
+Instantiation in Java refers to the process of creating an instance or object of a class. It involves calling the constructor of a class to allocate memory for the object and initialize its state.
+Syntax for Instantiation
+There are two ways to create instances in Java:
+Using the new keyword:
+java
+ClassName objName = new ClassName();
+
+Using a static factory method:
+java
+ClassName cn = ClassName.createInstance();
+
+Heap and Stack Memory
+Java's memory management is divided into two main areas: the stack and the heap.
+Stack Memory
+The stack memory is a physical space in RAM allocated to each thread at runtime.
+It follows the Last-In-First-Out (LIFO) order for memory management.
+The stack stores variables, references to objects, and partial results.
+Memory allocated to the stack lives until the function returns.
+Heap Memory
+The heap memory is created when the JVM starts up and is used by the application as long as it runs.
+It stores objects and JRE classes.
+Whenever an object is created, it occupies space in the heap memory, while the reference to that object is created in the stack.
+The heap memory does not follow any specific order like the stack.
+It dynamically handles the memory blocks.
+When an object is instantiated, the memory for the object is allocated in the heap, and a reference to that object is stored in the stack. This allows the object to be accessed and manipulated by the program.
