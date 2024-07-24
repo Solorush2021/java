@@ -1,0 +1,115 @@
+// Node class representing a node in the BST
+class Node {
+    int data;
+    Node left, right;
+
+    public Node(int data) {
+        this.data = data;
+        this.left = this.right = null;
+    }
+}
+
+// BST class implementing the Binary Search Tree operations
+class BST {
+    private Node root;
+
+    public BST() {
+        root = null;
+    }
+
+    public void insert(int data) {
+        root = insertRecursive(root, data);
+    }
+
+    private Node insertRecursive(Node node, int data) {
+        if (node == null) {
+            return new Node(data);
+        }
+        if (data < node.data) {
+            node.left = insertRecursive(node.left, data);
+        } else if (data > node.data) {
+            node.right = insertRecursive(node.right, data);
+        }
+        return node;
+    }
+
+    public boolean search(int data) {
+        return searchRecursive(root, data);
+    }
+
+    private boolean searchRecursive(Node node, int data) {
+        if (node == null) {
+            return false;
+        }
+        if (data == node.data) {
+            return true;
+        } else if (data < node.data) {
+            return searchRecursive(node.left, data);
+        } else {
+            return searchRecursive(node.right, data);
+        }
+    }
+
+    public void inorderTraversal() {
+        inorderRecursive(root);
+    }
+
+    private void inorderRecursive(Node node) {
+        if (node != null) {
+            inorderRecursive(node.left);
+            System.out.print(node.data + " ");
+            inorderRecursive(node.right);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BST bst = new BST();
+        bst.insert(5);
+        bst.insert(3);
+        bst.insert(8);
+        bst.insert(1);
+        bst.insert(4);
+        bst.insert(7);
+        bst.insert(10);
+
+        System.out.println("Inorder Traversal: ");
+        bst.inorderTraversal();
+        System.out.println();
+
+        System.out.println("Search for 8: " + bst.search(8));
+        System.out.println("Search for 11: " + bst.search(11));
+    }
+}
+Use code with caution.
+Java
+Project File Structure:
+├── src
+│   └── bst.java
+└── README.md
+Use code with caution.
+bst.java:
+This file contains the Java code implementing the BST data structure.
+README.md:
+# Binary Search Tree Implementation
+
+This project implements a Binary Search Tree (BST) data structure in Java, demonstrating the following operations:
+
+- **Insert:** Inserts a new node into the BST while maintaining the BST property.
+- **Search:** Searches for a specific value in the BST.
+- **Inorder Traversal:** Performs an inorder traversal of the BST, printing the nodes in ascending order.
+
+**Instructions:**
+
+1. Compile the code: `javac src/bst.java`
+2. Run the program: `java Main`
+
+**Output:**
+
+The program will print the inorder traversal of the BST and the results of searching for specific values.
+Use code with caution.
+Markdown
+Explanation:
+This structure represents a basic project setup for a college assignment. The src folder contains the Java source code, and the README.md file provides instructions and information about the project. This approach allows for easy organization and clarity when submitting the project.
+Note: This is a basic example. You might need to add additional features or modify the structure depending on the specific requirements of your college assignment.
